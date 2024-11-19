@@ -7,11 +7,12 @@ import { AccordionComponent } from './components/accordion/accordion.component';
 import { AccordionItem } from './accordion.item.interface';
 import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
 import { StarRatingsComponent } from "./components/star-ratings/star-ratings.component";
+import { MessageComponent } from "./components/message/message.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ToolbarComponent, CardComponent, AccordionComponent, ProgressBarComponent, StarRatingsComponent],
+  imports: [RouterOutlet, ToolbarComponent, CardComponent, AccordionComponent, ProgressBarComponent, StarRatingsComponent, MessageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
