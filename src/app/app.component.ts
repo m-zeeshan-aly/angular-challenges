@@ -5,11 +5,12 @@ import { CardComponent } from './components/card/card.component';
 import { AccordionComponent } from './components/accordion/accordion.component';
 
 import { AccordionItem } from './accordion.item.interface';
+import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ToolbarComponent,CardComponent,AccordionComponent],
+  imports: [RouterOutlet, ToolbarComponent, CardComponent, AccordionComponent, ProgressBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

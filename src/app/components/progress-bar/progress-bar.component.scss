@@ -1,0 +1,87 @@
+
+
+
+/* Container styles */
+.progress-container {
+  width: 100%;
+  background-color: #a7d5ee; /* Light blue background */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  height: 30px; /* Fixed height */
+  position: relative; /* Allows positioning inside */
+}
+
+/* Default progress bar styles */
+.progress-bar {
+  width: 0%; /* Initial progress is 0% */
+  height: 100%;
+  text-align: center;
+  color: white;
+  line-height: 30px; /* Centers text vertically */
+  font-weight: bold;
+  transition: width 0.3s ease; /* Smooth transition for width */
+  position: relative; /* Positions progress value text */
+}
+
+/* Progress bar color classes */
+.danger {
+  background-color: #f37474; /* Red for danger */
+}
+
+.warning {
+  background-color: #f3d146; /* Yellow for warning */
+}
+
+.success {
+  background-color: #61d264; /* Green for success */
+}
+
+.congrats {
+  background-color: #3484ee; /* Green for success */
+}
+
+/* Value text inside progress bar */
+#progress-value {
+  position: absolute;
+  top: 50%; /* Vertically centered */
+  left: 50%; /* Horizontally centered */
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+}
+
+
+
+button {
+  display: inline-block;
+  background-color: #4caf50; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth effects */
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #45a049; /* Slightly darker green */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Active state for when the button is clicked */
+button:active {
+  background-color: #3e8e41; /* Even darker green */
+  transform: scale(0.95); /* Slight shrink effect */
+}
+
+/* For accessibility and better focus styles */
+button:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 4px #4caf50; /* Custom glow effect */
+}
+

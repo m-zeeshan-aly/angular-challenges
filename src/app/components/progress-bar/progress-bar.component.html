@@ -1,0 +1,9 @@
+<div class="progress-container">
+    <div class="progress-bar" id="progress-bar"
+
+    [ngClass]="getProgressBarClass()"
+    [style.width.%]="progressValue">
+      <span id="progress-value">{{ progressValue > 0 ? progressValue + '%' : '0%' }}</span>
+    </div>
+</div>
+  <button (click)="updateProgress()">Update</button>

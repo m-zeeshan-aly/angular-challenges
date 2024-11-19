@@ -1,24 +1,35 @@
 <app-toolbar [title]="'100 Angular Challenges'">
-<ul>
-  <li>Components</li>
-  <li>Directives</li>
-  <li>Services</li>
-  <li>Pipes</li>
-  <li>Others</li>
-</ul>
+  <ul>
+    <li>Components</li>
+    <li>Directives</li>
+    <li>Services</li>
+    <li>Pipes</li>
+    <li>Others</li>
+  </ul>
 </app-toolbar>
 
-<app-card [iconClasses]="'fas fa-info-circle'"
- [title]="'Accordion'"
- [subTitle]="'Components'">
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Progress Bar'"
+  [subTitle]="'Components'"
+>
+  <app-progress-bar   body ></app-progress-bar>
 
- <app-accordion body [items]="accordionItems"></app-accordion>
- </app-card>
+</app-card>
 
- <app-card [iconClasses]="'fas fa-info-circle'"
-[title]="'Card'"
- [subTitle]="'Components'">
- <p body>Body Content</p>
- <p footer>Footer Content</p>
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Accordion'"
+  [subTitle]="'Components'"
+>
+  <app-accordion body [items]="accordionItems"></app-accordion>
+</app-card>
 
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'"
+>
+  <p body>Body Content</p>
+  <p footer>Footer Content</p>
 </app-card>
