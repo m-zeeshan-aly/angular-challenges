@@ -8,12 +8,23 @@
   </ul>
 </app-toolbar>
 
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Message'"
+  [subTitle]="'Components'"
+>
+  <app-message   body ></app-message>
+
+</app-card>
+
+
 <app-card
   [iconClasses]="'fas fa-info-circle'"
   [title]="'Star Rating'"
   [subTitle]="'Components'"
 >
-  <app-star-ratings   body [rating]="1.5"></app-star-ratings>
+  <app-star-ratings   body [rating]="3.6"></app-star-ratings>
 
 </app-card>
 
