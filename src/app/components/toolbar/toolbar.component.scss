@@ -21,9 +21,23 @@
   grid-auto-flow: column;               /* Makes the <ul> a flex container */
 
   }
-  li{
+  li {
   display: inline;
   }
+
+  ul a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Inherits text color from parent */
+  // padding: 5px 10px; /* Matches <li> padding if needed */
+  display: inline-block; /* Ensures padding applies correctly */
+  transition: border-bottom 0.3s ease; /* Smooth transition for hover effect */
+  border-bottom: 2px solid transparent; /* Invisible border for hover effect */
+}
+
+/* Hover effect for <a> tags */
+ul a:hover {
+  border-bottom: 2px solid #af634c; /* Green border appears on hover */
+}
 }
 
 

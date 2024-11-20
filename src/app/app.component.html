@@ -1,59 +1,14 @@
 <app-toolbar [title]="'100 Angular Challenges'">
   <ul>
-    <li>Components</li>
-    <li>Directives</li>
-    <li>Services</li>
-    <li>Pipes</li>
+    <a routerLink="" >Components</a>
+    <a routerLink="/directives">Directives</a>
+    <a routerLink="/services">Services</a>
+    <a routerLink="/pipes">Pipes</a>
     <li>Others</li>
   </ul>
 </app-toolbar>
 
-
-<app-card
-  [iconClasses]="'fas fa-info-circle'"
-  [title]="'Message'"
-  [subTitle]="'Components'"
->
-  <app-message   body ></app-message>
-
-</app-card>
-
-
-<app-card
-  [iconClasses]="'fas fa-info-circle'"
-  [title]="'Star Rating'"
-  [subTitle]="'Components'"
->
-  <app-star-ratings   body [rating]="3.6"></app-star-ratings>
-
-</app-card>
-
-<app-card
-  [iconClasses]="'fas fa-info-circle'"
-  [title]="'Progress Bar'"
-  [subTitle]="'Components'"
->
-  <app-progress-bar   body ></app-progress-bar>
-
-</app-card>
-
-<app-card
-  [iconClasses]="'fas fa-info-circle'"
-  [title]="'Accordion'"
-  [subTitle]="'Components'"
->
-  <app-accordion body [items]="accordionItems"></app-accordion>
-</app-card>
-
-<app-card
-  [iconClasses]="'fas fa-info-circle'"
-  [title]="'Card'"
-  [subTitle]="'Components'"
->
-  <p body>Body Content</p>
-  <p footer>Footer Content</p>
-</app-card>
-
-
-
+<main>
+  <router-outlet></router-outlet>
+</main>
 <app-top-of-page></app-top-of-page>
