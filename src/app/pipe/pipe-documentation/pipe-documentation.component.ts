@@ -1,0 +1,12 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-pipe-documentation',
+  standalone: true,
+  imports: [],
+  templateUrl: './pipe-documentation.component.html',
+  styleUrl: './pipe-documentation.component.scss'
+})
+export class PipeDocumentationComponent {
+
+}
