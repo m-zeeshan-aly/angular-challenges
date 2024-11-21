@@ -1,0 +1,53 @@
+// .credit-card-input-container{
+//   display: grid;
+//   grid-gap: 20px;
+
+
+//   .input-container{
+//     position: relative;
+
+//     input{
+
+//       padding: 10px;
+//       padding-left: 2.5em;
+//     }
+
+//     i{
+//       position: absolute;
+//       top: 50%;
+//       left: 1em;
+//       transform: translate((-50%,-50%));
+//     }
+
+//   }
+// }
+
+
+.credit-card-input-container {
+  display: grid;
+  grid-gap: 30px;
+
+  .input-container {
+    display: inline;
+    position: relative;
+
+    input {
+      width: 50%;
+      padding: 10px 1em 10px 3em; /* Adds extra space for the icon */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1.5em;
+      box-sizing: border-box; /* Ensures padding is included in width */
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 10px; /* Adjusted to align with input padding */
+      right: 10px;
+      transform: translateY(-50%);
+      font-size: 1.5em; /* Ensures the icon is large enough to be visible */
+      color: #552121; /* Subtle color for better contrast with input */
+    }
+  }
+}
