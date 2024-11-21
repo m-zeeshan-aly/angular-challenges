@@ -4,11 +4,12 @@ import { CardComponent } from '../../components/card/card.component';
 import { TruncatePipe } from '../truncate/truncate.pipe';
 import { NgFor } from '@angular/common';
 import { SortByKeyPipe } from '../sortByKey/sort-by-key.pipe';
+import { CreditCardformatterPipe } from '../creditCardFormatetterPipe/credit-cardformatter.pipe';
 
 @Component({
   selector: 'app-pipe-documentation',
   standalone: true,
-  imports: [CardComponent,TruncatePipe,NgFor,SortByKeyPipe],
+  imports: [CardComponent,TruncatePipe,NgFor,SortByKeyPipe,CreditCardformatterPipe],
   templateUrl: './pipe-documentation.component.html',
   styleUrl: './pipe-documentation.component.scss'
 })
