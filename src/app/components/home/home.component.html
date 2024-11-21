@@ -1,5 +1,18 @@
 <main>
 
+
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Loader'"
+  [subTitle]="'Components'"
+>
+  <app-loader   body [isLoading]="true"></app-loader>
+
+</app-card>
+
+
+
 <app-card
   [iconClasses]="'fas fa-info-circle'"
   [title]="'Message'"
@@ -8,6 +21,10 @@
   <app-message   body ></app-message>
 
 </app-card>
+
+
+
+
 
 
 <app-card
