@@ -1,13 +1,20 @@
 <main>
 
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Text Loader'"
+  [subTitle]="'Components'"
+>
+  <app-text-laoder   body [isLoading]="false"  [loaderType]="loaderType"></app-text-laoder>
 
+</app-card>
 
 <app-card
   [iconClasses]="'fas fa-info-circle'"
   [title]="'Loader'"
   [subTitle]="'Components'"
 >
-  <app-loader   body [isLoading]="false"></app-loader>
+  <app-loader   body [isLoading]="false" ></app-loader>
 
 </app-card>
 

@@ -6,6 +6,8 @@ import { StarRatingsComponent } from '../star-ratings/star-ratings.component';
 import { MessageComponent } from '../message/message.component';
 import { AccordionItem } from '../../accordion.item.interface';
 import { LoaderComponent } from "../loader/loader.component";
+import { LoaderType } from '../../models/loader-type.enum';
+import { TextLaoderComponent } from "../text-laoder/text-laoder.component";
 
 @Component({
   selector: 'app-home',
@@ -14,7 +16,8 @@ import { LoaderComponent } from "../loader/loader.component";
     CardComponent, AccordionComponent,
     ProgressBarComponent, StarRatingsComponent,
     MessageComponent,
-    LoaderComponent
+    LoaderComponent,
+    TextLaoderComponent
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -41,6 +44,7 @@ export class HomeComponent {
       }
     ]
 
-}
+  public loaderType = LoaderType.Loading;
 
+}
 
