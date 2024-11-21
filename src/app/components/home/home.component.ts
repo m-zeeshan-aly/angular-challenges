@@ -5,15 +5,17 @@ import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 import { StarRatingsComponent } from '../star-ratings/star-ratings.component';
 import { MessageComponent } from '../message/message.component';
 import { AccordionItem } from '../../accordion.item.interface';
+import { LoaderComponent } from "../loader/loader.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-     CardComponent, AccordionComponent,
-      ProgressBarComponent, StarRatingsComponent,
-      MessageComponent
-    ],
+    CardComponent, AccordionComponent,
+    ProgressBarComponent, StarRatingsComponent,
+    MessageComponent,
+    LoaderComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

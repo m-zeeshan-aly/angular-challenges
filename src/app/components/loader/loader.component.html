@@ -1,0 +1,17 @@
+<div class="loader-overlay"  [style.display]="isLoading ? 'block' : 'none' ">
+
+  <div class="loader-container">
+
+    <div class="loader">
+      <div class="circular">
+          <button (click)="loading()" class="stop-button">
+            <div class="stop-icon"></div>
+          </button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+ <button (click)="loading()" class="start-button"> start loading</button>

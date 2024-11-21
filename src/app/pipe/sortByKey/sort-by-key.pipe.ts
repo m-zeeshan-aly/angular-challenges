@@ -6,20 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortByKeyPipe implements PipeTransform {
 
-
-  // transform(array: any[], key: string): any[] {
-  //   if (!array || !key) {
-  //     return array; // Return the array as-is if it's null or key is missing
-  //   }
-
-  //   // Sort array based on the given key
-  //   return [...array].sort((a, b) => {
-  //     if (a[key] < b[key]) return -1;
-  //     if (a[key] > b[key]) return 1;
-  //     return 0;
-  //   });
-  // }
-
   transform(array: any[], key: string, order: 'asc' | 'desc' = 'asc'): any[] {
   if (!array || !key) {
     return array; // Return the array as-is if it's null or key is missing
