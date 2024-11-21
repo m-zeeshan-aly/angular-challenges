@@ -1,0 +1,31 @@
+<div class="loader-overlay"  [style.display]="isLoading ? 'block' : 'none' ">
+
+  <div class="loader-container">
+
+    <div class="loader">
+
+      <ng-container [ngSwitch]="loaderType">
+
+        <h1 *ngSwitchCase="LoaderType.Loading">{{loadingText}}</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button (click)="loading()" class="stop-button">
+
+          </button>
+
+
+      <div class="circular" *ngSwitchCase="LoaderType.Circular">
+          <button (click)="loading()" class="stop-button">
+            <div class="stop-icon"></div>
+          </button>
+      </div>
+      </ng-container>
+
+    </div>
+
+  </div>
+</div>
+
+ <button (click)="loading()" class="start-button"> start loading</button>
