@@ -8,6 +8,8 @@ import { AccordionItem } from '../../accordion.item.interface';
 import { LoaderComponent } from "../loader/loader.component";
 import { LoaderType } from '../../models/loader-type.enum';
 import { TextLaoderComponent } from "../text-laoder/text-laoder.component";
+import { TwitterPostComponent } from '../twitter-post/twitter-post.component';
+
 
 @Component({
   selector: 'app-home',
@@ -17,8 +19,8 @@ import { TextLaoderComponent } from "../text-laoder/text-laoder.component";
     ProgressBarComponent, StarRatingsComponent,
     MessageComponent,
     LoaderComponent,
-    TextLaoderComponent
-],
+    TextLaoderComponent,
+TwitterPostComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
