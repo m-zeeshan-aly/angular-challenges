@@ -1,0 +1,14 @@
+<div class="counter-container">
+  <button class="decrement" (click)="minusOne()">
+    <i class="fas fa-minus"></i>
+
+  </button>
+
+  <input type="text" [(ngModel)]="counter" [min]="min" [max]="max">
+  <button class="increment" (click)="plusOne()">
+    <i class="fas fa-plus">
+
+    </i>
+
+  </button>
+</div>
