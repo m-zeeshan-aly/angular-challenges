@@ -12,6 +12,8 @@ import { TwitterPostComponent } from '../twitter-post/twitter-post.component';
 import { CounterComponent } from '../counter/counter.component';
 import { TableComponent } from '../table/table.component';
 import { PagingComponent } from "../paging/paging.component";
+import { TabsComponent } from "../tabs/tabs.component";
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -25,7 +27,9 @@ import { PagingComponent } from "../paging/paging.component";
     TextLaoderComponent,
     TwitterPostComponent, CounterComponent,
     TableComponent,
-    PagingComponent
+    PagingComponent,
+    TabsComponent,
+    CommonModule
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -53,6 +57,14 @@ export class HomeComponent {
     ]
 
   public loaderType = LoaderType.Loading;
+
+  public tabs:{title:string ,active:boolean}[]=[
+    {title: "Data Tab",active:true},
+    {title: "Paging Tab",active:false},
+    {title:"Counter Tab",active:false}
+  ];
+
+  public selectedTab= 0;
 
 }
 

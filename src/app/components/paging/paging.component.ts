@@ -38,6 +38,7 @@ export class PagingComponent {
 
   public get isPreviousDisabled():boolean{
     return this.currentPage - this.step < 1 ;
+    // return (this.currentPage ===1 || this.currentPage===2);
   }
 
   public get pages():number[]{
