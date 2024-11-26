@@ -11,6 +11,7 @@ import { TextLaoderComponent } from "../text-laoder/text-laoder.component";
 import { TwitterPostComponent } from '../twitter-post/twitter-post.component';
 import { CounterComponent } from '../counter/counter.component';
 import { TableComponent } from '../table/table.component';
+import { PagingComponent } from "../paging/paging.component";
 
 
 @Component({
@@ -22,8 +23,10 @@ import { TableComponent } from '../table/table.component';
     MessageComponent,
     LoaderComponent,
     TextLaoderComponent,
-TwitterPostComponent,CounterComponent,
-TableComponent],
+    TwitterPostComponent, CounterComponent,
+    TableComponent,
+    PagingComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
