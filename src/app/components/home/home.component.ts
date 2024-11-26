@@ -10,6 +10,7 @@ import { LoaderType } from '../../models/loader-type.enum';
 import { TextLaoderComponent } from "../text-laoder/text-laoder.component";
 import { TwitterPostComponent } from '../twitter-post/twitter-post.component';
 import { CounterComponent } from '../counter/counter.component';
+import { TableComponent } from '../table/table.component';
 
 
 @Component({
@@ -21,7 +22,8 @@ import { CounterComponent } from '../counter/counter.component';
     MessageComponent,
     LoaderComponent,
     TextLaoderComponent,
-TwitterPostComponent,CounterComponent],
+TwitterPostComponent,CounterComponent,
+TableComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
