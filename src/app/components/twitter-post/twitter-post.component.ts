@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-twitter-post',
@@ -13,9 +14,18 @@ export class TwitterPostComponent {
   @Input() public hashTags: string[] =["MuhammadZeeshan","Javascript","Typescript","Angular","100AngularChallenges"];
 
 
-  constructor(public titleService:Title){
+  constructor(public titleService:Title,public router:Router){
 
   }
+
+  public get linkedinMessage():string{
+    const base ='https://www.linkedin.com/in/shareArticle?mini=true'
+    const currentSite = `&url=https://www.linkedin.com/in/mohammad-zeeshan-a9b17a199/${this.router.url}`
+
+    return `${base}${currentSite}`;
+  }
+
+
   public get twitterUrl(): string {
 
     const base =this.getBaseWithHashTagsAndRoute()

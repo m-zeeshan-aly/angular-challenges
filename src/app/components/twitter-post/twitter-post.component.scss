@@ -1,12 +1,12 @@
-.icon-container{
-  grid: 0%;
-}
+// .icon-container{
+//   grid: 0%;
+// }
 
 
-i{
-  font-size: 40px;
-  color: #00aecc;
-}
+// i{
+//   font-size: 40px;
+//   color: #00aecc;
+// }
 
 
 .icon-container {
@@ -14,27 +14,6 @@ i{
   gap: 10px; /* Adds spacing between icons */
   align-items: center; /* Vertically aligns icons */
   justify-content: center; /* Centers the icons horizontally within the container */
-}
-
-.icon-container i {
-  font-size: 24px; /* Adjust the size of the icons */
-  color: #333; /* Adjust the color of the icons */
-  cursor: pointer; /* Changes cursor to pointer for clickable icons */
-}
-
-.icon-container i:hover {
-  color: #007bff; /* Changes the color of icons on hover */
-}
-
-
-
-.card-container {
-  display: flex; /* Places the cards side-by-side */
-  gap: 20px; /* Adds spacing between the cards */
-  justify-content: space-around; /* Ensures equal space around the cards */
-  align-items: center; /* Vertically aligns the cards */
-  padding: 20px;
-  background-color: #f8f9fa; /* Light background for contrast */
 }
 
 .card {
