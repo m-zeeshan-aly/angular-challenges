@@ -1,0 +1,9 @@
+<div >
+  <h1  *ngIf="isInDOM" [@fadeInOutAnimation] >Hello</h1>
+  <h1 *ngIf="!isInDOM" [@fadeInOutAnimation] >World</h1>
+
+</div>
+<div >
+  <button  appRipple="ripple"  (click)="isInDOM = !isInDOM"> Toggle Animation</button>
+</div>
+
