@@ -61,11 +61,11 @@ export class HomeComponent {
   public loaderType = LoaderType.Loading;
 
   public tabs:{title:string ,active:boolean}[]=[
-    {title: "Data Tab",active:true},
-    {title: "Paging Tab",active:false},
-    {title:"Counter Tab",active:false}
-  ];
+    {title:"Counter Tab",active:true},
+    {title: "Data Tab",active:false},
+    {title: "Paging Tab",active:false}
 
+  ];
   public selectedTab= 0;
 
 }
