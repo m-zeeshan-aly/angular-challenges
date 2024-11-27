@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 
 @Component({
@@ -18,6 +18,12 @@ export class TableComponent {
     {first: "Zeeshu" ,last: "Shani",dob:"1/28/1990"},
     {first: "Firdose" ,last: "Market",dob:"2/29/1999"}
   ]
+
+  @Output() public headerSelected = new EventEmitter<{key:string,value:any}>();
+
+  public headerSelection(key:string,value:any):void{
+    this.headerSelected.emit({value,key});
+  }
 
 }
 
