@@ -1,0 +1,25 @@
+.ag-theme-quartz {
+    /* Changes the color of the grid text */
+      --ag-foreground-color: rgb(5, 7, 10);
+      /* Changes the color of the grid background */
+      --ag-background-color: rgb(241, 247, 255);
+      /* Changes the header color of the top row */
+      --ag-header-background-color: rgb(4, 5, 2);
+      --ag-header-foreground-color: rgb(250, 252, 246);
+      --ag-header-foreground-font-size: 7rem;
+      /* Changes the hover color of the row*/
+      --ag-row-hover-color: rgb(216, 226, 255);
+      font-size: 20px;
+}
+
+
+:host ::ng-deep .ag-header-cell-label {
+  font-size: 20px; /* Header font size */
+}
+
+:host ::ng-deep .ag-cell {
+  font-size: 15px; /* Cell font size */
+}
+
+
+
