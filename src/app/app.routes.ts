@@ -3,6 +3,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ServiceDocumentationComponent } from './services/service-documentation/service-documentation.component';
 import { DirectiveDocumentationComponent } from './directives/directive-documentation/directive-documentation.component';
 import { OtherDocumentationComponent } from './others/other-documentation/other-documentation.component';
+import { SignUpComponent } from './forms/sign-up/sign-up.component';
+import { SignInComponent } from './forms/sign-in/sign-in.component';
 
 
 
@@ -22,6 +24,14 @@ export const routes: Routes = [
 
   {
     path: "other", component :OtherDocumentationComponent
+  },
+
+  {
+    path: "signup", component :SignUpComponent
+  },
+
+  {
+    path: "signin", component :SignInComponent
   },
 
 

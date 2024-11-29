@@ -31,11 +31,12 @@
             "styles": [
               "ag-grid-community/styles/ag-grid.css",
               "ag-grid-community/styles/ag-theme-quartz.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 
             ],
-            "scripts": []
+            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.js"]
           },
           "configurations": {
             "production": {

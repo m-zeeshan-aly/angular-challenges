@@ -1,0 +1,208 @@
+<body>
+  <section class="container" *ngIf="!isFlipped">
+    <header>Sign Up</header>
+    <form action="#" class="form" [formGroup]="signUp">
+      <div class="input-box">
+        <label>Full Name</label>
+        <input
+          type="text"
+          placeholder="Enter full name"
+          required
+          formControlName="name"
+        />
+        <div *ngIf="signUp.get('name')?.invalid && signUp.get('name')?.touched" class="text-danger">
+          <small *ngIf="signUp.get('name')?.errors?.['required']">Name is required.</small>
+          <small *ngIf="signUp.get('name')?.errors?.['minlength']">Name must be at least 3 characters.</small>
+          <small *ngIf="signUp.get('name')?.errors?.['maxlength']">Name cannot exceed 20 characters.</small>
+        </div>
+      </div>
+      <div class="input-box">
+        <label>Email Address</label>
+        <input
+          type="email"
+          placeholder="xyz@gmail.com"
+          required
+          formControlName="email"
+        />
+        <div *ngIf="signUp.get('email')?.invalid && signUp.get('email')?.touched" class="text-danger">
+          <small *ngIf="signUp.get('email')?.errors?.['required']">Email is required.</small>
+          <small *ngIf="signUp.get('email')?.errors?.['email']">Enter a valid email address.</small>
+        </div>
+
+      </div>
+
+      <div class="input-box">
+        <label>Password</label>
+        <input
+          type="password"
+          placeholder="***"
+          required
+          formControlName="password1"
+        />
+        <div *ngIf="signUp.get('password1')?.invalid && signUp.get('password1')?.touched" class="text-danger">
+          <small *ngIf="signUp.get('password1')?.errors?.['required']">Password is required.</small>
+          <small *ngIf="signUp.get('password1')?.errors?.['minlength']">Password must be at least 8 characters.</small>
+          <small *ngIf="signUp.get('password1')?.errors?.['pattern']">Password must include uppercase, lowercase, a number, and a special character.</small>
+        </div>
+
+      </div>
+
+      <div class="input-box">
+        <label>Password</label>
+        <input
+          type="password"
+          placeholder="***"
+          required
+          formControlName="password2"
+        />
+        <div *ngIf="signUp.hasError('passwordMismatch') && signUp.touched" class="text-danger">
+          Passwords do not match.
+        </div>
+      </div>
+      <div class="column">
+        <div class="input-box">
+          <label>Phone Number</label>
+          <input
+            type="number"
+            placeholder="Enter phone number"
+            required
+            formControlName="phone"
+          />
+          <div *ngIf="signUp.get('phone')?.invalid && signUp.get('phone')?.touched" class="text-danger">
+            <small *ngIf="signUp.get('phone')?.errors?.['required']">Phone number is required.</small>
+            <small *ngIf="signUp.get('phone')?.errors?.['pattern']">Enter a valid phone number (10-15 digits).</small>
+          </div>
+        </div>
+        <div class="input-box">
+          <label>Birth Date</label>
+          <input
+            type="date"
+            placeholder="Enter birth date"
+            required
+            formControlName="dob"
+          />
+        </div>
+      </div>
+      <div class="gender-box">
+        <h3>Gender</h3>
+        <div class="gender-option">
+          <div class="gender">
+            <input
+              type="radio"
+              id="check-male"
+              name="gender"
+              checked
+              formControlName="gender"
+              value="male"
+            />
+            <label for="check-male">male</label>
+          </div>
+          <div class="gender">
+            <input
+              type="radio"
+              id="check-female"
+              name="gender"
+              formControlName="gender"
+              value="female"
+            />
+            <label for="check-female">Female</label>
+          </div>
+          <div class="gender">
+            <input
+              type="radio"
+              id="check-other"
+              name="gender"
+              formControlName="gender"
+              value="Prefer Not To Say"
+            />
+            <label for="check-other">prefer not to say</label>
+          </div>
+        </div>
+        <div *ngIf="signUp.get('gender')?.invalid && signUp.get('gender')?.touched" class="text-danger">
+          <small>Gender is required.</small>
+        </div>
+      </div>
+      <div class="input-box address">
+        <label>Address</label>
+        <input
+          type="text"
+          placeholder="Enter street address"
+          required
+          formControlName="address"
+        />
+        <div class="column">
+          <div class="select-box">
+            <select formControlName="country">
+              <option hidden>Country</option>
+              <option selected>Pakistan</option>
+              <option>America</option>
+              <option>Japan</option>
+              <option>India</option>
+              <option>Nepal</option>
+            </select>
+          </div>
+          <input
+            type="text"
+            placeholder="Enter your city"
+            required
+            formControlName="city"
+          />
+        </div>
+        <div class="column">
+          <input
+            type="text"
+            placeholder="Enter your region"
+            required
+            formControlName="region"
+          />
+          <input
+            type="number"
+            placeholder="Enter postal code"
+            required
+            formControlName="postalCode"
+          />
+        </div>
+      </div>
+      <button (click)="onSignupSubmit()" [disabled]="signUp.invalid">Submit</button>
+      <div class="toggle-form text-center" (click)="toggleToLogin()">
+        Already have an Account? Sign In
+      </div>
+    </form>
+  </section>
+  <section class="container" *ngIf="isFlipped">
+    <header>Sign In</header>
+    <form action="#" class="form" [formGroup]="signIn">
+      <div class="input-box">
+        <label>Email Address</label>
+        <input
+          type="email"
+          placeholder="Enter email address"
+          required
+          formControlName="email"
+        />
+        <div *ngIf="signIn.get('email')?.invalid && signIn.get('email')?.touched" class="text-danger">
+          <small *ngIf="signIn.get('email')?.errors?.['required']">Email is required.</small>
+          <small *ngIf="signIn.get('email')?.errors?.['email']">Enter a valid email address.</small>
+        </div>
+      </div>
+      <div class="input-box">
+        <label>Password</label>
+        <input
+          type="password"
+          placeholder="***"
+          required
+          formControlName="password"
+        />
+        <div *ngIf="signIn.get('password')?.invalid && signIn.get('password')?.touched" class="text-danger">
+          <small>Password is required.</small>
+        </div>
+      </div>
+
+      <button [disabled]="signIn.invalid">Submit</button>
+      <div class="toggle-form text-center" (click)="toggleToSignUp()">
+        Don't have an Account? Sign Up
+      </div>
+    </form>
+  </section>
+</body>
+
