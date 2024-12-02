@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-apply-form',
@@ -9,7 +10,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './apply-form.component.scss'
 })
 export class ApplyFormComponent {
-    @Input() public jobTitle = 'Full Stack Web Developer';
+
+  constructor(private router: Router) {}
+  @Input() public jobTitle = 'Full Stack Web Developer';
   @Input() public jobDescription = 'We are seeking a highly skilled AI Full Stack Developer to join our dynamic team. This role involves designing and developing innovative AI solutions that enhance our healthcare applications.';
   @Input() public jobRequirements = [
     'BS/MS degree in Computer Science, Engineering or a related subject',
@@ -25,6 +28,14 @@ export class ApplyFormComponent {
   @Input() public jobType = ['Full Time', 'Remote'];
   @Input() public jobBenefits = ['Health Insurance', 'Paid Time Off', 'Performance Bonuses'];
   @Input() public aboutJobVenture = 'Our company specializes in building AI-powered solutions for healthcare, driving innovation in patient care and system efficiency.';
+
+
+
+
+  public applyForJob() {
+    this.router.navigate(["others/apply"]); // Navigate to the Apply Form
+  }
+
 }
 
 
