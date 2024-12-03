@@ -44,7 +44,6 @@ export class ApplicationsComponent implements OnInit {
     this.loadApplications(); // Refresh the local array to update the UI
   }
 }
-
 }
 
 
