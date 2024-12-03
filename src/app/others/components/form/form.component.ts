@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators, ReactiveFormsModule } from '@angular/forms';
+import { JobStorageService } from '../../../services/job-storage/job-storage.service';
+import { JobApplication } from '../../../models/job-application.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -11,6 +14,7 @@ import { FormBuilder, FormGroup, FormArray, Validators, ReactiveFormsModule } fr
 })
 export class FormComponent implements OnInit {
   jobForm: any;
+  showSuccessAlert: boolean = false;
   educationLevels: string[] = [
     'High School',
     "Bachelor's",
@@ -20,7 +24,7 @@ export class FormComponent implements OnInit {
   ];
   skillTypes: string[] = ['Technical', 'Soft Skill', 'Language', 'Tool']; // Example skill types
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private jobStorageService: JobStorageService,private router: Router) {}
 
   ngOnInit() {
     this.initializeForm();
@@ -39,7 +43,8 @@ export class FormComponent implements OnInit {
       skills: this.fb.array([this.createSkillGroup()]), // Updated to include skill group
       experience: ['', [Validators.required, Validators.min(0)]],
       joinTime: ['', [Validators.required, Validators.min(1)]],
-      acceptTerms: [false, Validators.requiredTrue]
+      acceptTerms: [false, Validators.requiredTrue],
+      showDetails: false,
     });
   }
 
@@ -99,15 +104,25 @@ export class FormComponent implements OnInit {
     }
   }
 
-  // Submit the form
+
+
   onSubmit() {
-    if (this.jobForm.valid) {
-      console.log(this.jobForm.value);
-      // Handle form submission
-    } else {
-      this.markFormGroupTouched(this.jobForm);
-    }
+  if (this.jobForm.valid) {
+    const application: JobApplication = this.jobForm.value;
+    this.jobStorageService.saveApplication(application);
+
+    // Show success alert
+    this.showSuccessAlert = true;
+    this.jobForm.reset();
+    setTimeout(() => {
+      this.showSuccessAlert = false; // Hide the alert after 3 seconds
+      this.router.navigate(["others"]); // Navigate after the alert disappears
+    }, 3000);
+  } else {
+    this.markFormGroupTouched(this.jobForm);
   }
+}
+
 
   // Mark all form controls as touched to display errors
   markFormGroupTouched(formGroup: FormGroup | FormArray) {
