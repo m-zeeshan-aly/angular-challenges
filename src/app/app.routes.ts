@@ -24,7 +24,7 @@ export const routes: Routes = [
   },
 
   {
-    path: "other", component :OtherDocumentationComponent
+    path: "others", component :OtherDocumentationComponent
   },
 
   {

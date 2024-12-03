@@ -1,1 +1,92 @@
-<p>applications works!</p>
+<div class="main-container">
+    <div class="container">
+        <h1 class="page-title">Application Dashboard</h1>
+
+        <div *ngIf="applications.length; else noData">
+            <div class="clear-all-container">
+                <button class="clear-all-btn" (click)="clearAllApplications()">
+                    <i class="fas fa-trash-alt me-2"></i>Clear All Applications
+                </button>
+            </div>
+
+            <div class="row">
+                <div *ngFor="let application of applications; let i = index" class="col-lg-4 col-md-6">
+                    <div class="application-card fade-in">
+                        <div class="card-header">
+                            <h5 class="header-title">
+                                <i class="fas fa-file-alt"></i>
+                                Application {{ i + 1 }}
+                            </h5>
+                            <button class="delete-btn" (click)="deleteApplication(i)">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="info-section">
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <div class="info-label">Full Name</div>
+                                        <p class="info-value">{{ application.personalInfo.firstName }} {{ application.personalInfo.lastName }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <div class="info-label">Email Address</div>
+                                        <p class="info-value">{{ application.personalInfo.email }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="details-btn" (click)="application.showDetails = !application.showDetails">
+                                <i class="fas" [ngClass]="application.showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                {{ application.showDetails ? 'Hide Details' : 'View Details' }}
+                            </button>
+
+                            <div *ngIf="application.showDetails" class="details-section slide-in">
+                                <h3 class="section-title">Education</h3>
+                                <div class="education-list">
+                                    <div *ngFor="let edu of application.educationArray" class="education-item">
+                                        <div class="education-header">
+                                            <div class="degree-info">
+                                                <h6>{{ edu.level }}</h6>
+                                                <div class="institute-name">{{ edu.instituteName }}</div>
+                                            </div>
+                                            <span class="grade-badge">{{ edu.grade }}%</span>
+                                        </div>
+                                        <div>{{ edu.degreeName }}</div>
+                                    </div>
+                                </div>
+
+                                <h3 class="section-title mt-4">Skills</h3>
+                                <div class="skills-grid">
+                                    <div *ngFor="let skill of application.skills" class="skill-item">
+                                        <span class="skill-name">{{ skill.name }}</span>
+                                        <span class="skill-type">{{ skill.type }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ng-template #noData>
+            <div class="no-data-container fade-in">
+                <i class="fas fa-clipboard no-data-icon"></i>
+                <h2 class="no-data-title">No Applications Yet</h2>
+                <p class="no-data-text">Start receiving applications to see them displayed here.</p>
+            </div>
+        </ng-template>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
