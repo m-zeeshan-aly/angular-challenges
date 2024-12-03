@@ -113,10 +113,10 @@ export class FormComponent implements OnInit {
 
     // Show success alert
     this.showSuccessAlert = true;
-    // this.jobForm.reset();
+    this.jobForm.reset();
     setTimeout(() => {
       this.showSuccessAlert = false; // Hide the alert after 3 seconds
-      // this.router.navigate(["others"]); // Navigate after the alert disappears
+      this.router.navigate(["others"]); // Navigate after the alert disappears
     }, 3000);
   } else {
     this.markFormGroupTouched(this.jobForm);
