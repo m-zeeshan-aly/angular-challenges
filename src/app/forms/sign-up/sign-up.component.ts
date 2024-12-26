@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 
 import { passwordMatchValidator } from "../validator/password-match.validator";
+import { UserApiService } from '../../services/user-api.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -19,6 +20,8 @@ import { passwordMatchValidator } from "../validator/password-match.validator";
 })
 export class SignUpComponent {
   @Input() public isFlipped = false;
+
+  private userApiService = inject(UserApiService)
 
   public toggleToLogin(): void {
     console.log('login');
@@ -112,7 +115,17 @@ export class SignUpComponent {
 
   onSignupSubmit(): void {
     console.log(this.signUp.value);
-    const formData = this.signUp.value;
+    const formData = this.signUp;
+    if (formData.valid) {
+      this.userApiService.createUser(formData.value).subscribe({
+        next: (response) => {
+          console.log('User created successfully:', response);
+        },
+        error: (error) => {
+          console.error('Error creating user:', error);
+        }
+      });
+    }
     this.signUp.reset(); // Reset form
   }
 
@@ -122,4 +135,15 @@ export class SignUpComponent {
     const formData = this.signUp.value;
     this.signUp.reset(); // Reset form
   }
+
+
+
 }
+
+
+
+
+
+
+
+

@@ -23,3 +23,5 @@ export interface JobApplication {
   acceptTerms: boolean;
   showDetails: boolean;
 }
+
+

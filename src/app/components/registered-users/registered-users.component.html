@@ -1,0 +1,93 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+<!-- user-card.component.html -->
+<div class="cards-grid">
+  <p *ngIf="!usersArray.length && !isLoading" class="empty-message">No users found.</p>
+  <p *ngIf="isLoading" class="loading-message">Loading users, please wait...</p>
+
+
+  <div class="user-card" *ngFor="let user of usersArray; let i = index"
+       [style.--card-gradient]="getGradient(i)"
+       @cardAnimation>
+
+    <!-- Top Section -->
+    <div class="card-header">
+      <div class="profile-section">
+        <div class="avatar">{{user.name.charAt(0)}}</div>
+        <div class="user-intro">
+          <h3>{{user.name}}</h3>
+          <div class="badge">
+            <i class="bi bi-briefcase-fill"></i>
+            {{user.country}}
+          </div>
+        </div>
+      </div>
+      <button class="delete-button" (click)="onDelete(user, $event)">
+        <i class="bi bi-trash3"></i>
+      </button>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <div class="contact-chip">
+        <i class="bi bi-envelope-paper-fill"></i>
+        <span>{{user.email}}</span>
+      </div>
+      <div class="contact-chip">
+        <i class="bi bi-telephone-forward-fill"></i>
+        <span>{{user.phone}}</span>
+      </div>
+    </div>
+
+    <!-- Info Tiles -->
+    <div class="info-tiles">
+      <div class="info-tile">
+        <div class="tile-icon">
+          <i class="bi bi-geo-alt-fill"></i>
+        </div>
+        <div class="tile-content">
+          <span class="tile-label">Location</span>
+          <span class="tile-value">{{user.city}}</span>
+        </div>
+      </div>
+
+      <div class="info-tile">
+        <div class="tile-icon">
+          <!--          <i class="bi bi-calendar2-heart-fill"></i>-->
+          <i class="fas fa-birthday-cake"></i>
+        </div>
+        <div class="tile-content">
+          <span class="tile-label">Birthday</span>
+          <span class="tile-value">{{user.dob | date:'mediumDate'}}</span>
+        </div>
+      </div>
+
+      <div class="info-tile">
+        <div class="tile-icon">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <div class="tile-content">
+          <span class="tile-label">Gender</span>
+          <span class="tile-value">{{user.gender}}</span>
+        </div>
+      </div>
+
+      <div class="info-tile">
+        <div class="tile-icon">
+          <i class="bi bi-pin-map-fill"></i>
+        </div>
+        <div class="tile-content">
+          <span class="tile-label">Region</span>
+          <span class="tile-value">{{user.region}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Address Bar -->
+    <div class="address-bar">
+      <i class="bi bi-house-door-fill"></i>
+      <p>{{user.address}}, {{user.postalCode}}</p>
+    </div>
+  </div>
+</div>
