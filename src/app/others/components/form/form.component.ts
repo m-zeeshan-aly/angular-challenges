@@ -24,7 +24,10 @@ export class FormComponent implements OnInit {
   ];
   skillTypes: string[] = ['Technical', 'Soft Skill', 'Language', 'Tool']; // Example skill types
 
-  constructor(private fb: FormBuilder, private jobStorageService: JobStorageService,private router: Router) {}
+  constructor(private fb: FormBuilder,
+    private jobStorageService: JobStorageService,
+    private router: Router)
+    {}
 
   ngOnInit() {
     this.initializeForm();

@@ -15,6 +15,7 @@ import { PagingComponent } from "../paging/paging.component";
 import { TabsComponent } from "../tabs/tabs.component";
 import { CommonModule } from '@angular/common';
 import { SortTableComponent } from "../sort-table/sort-table.component";
+import { RegisteredUsersComponent } from '../registered-users/registered-users.component';
 
 
 @Component({
@@ -31,7 +32,8 @@ import { SortTableComponent } from "../sort-table/sort-table.component";
     PagingComponent,
     TabsComponent,
     CommonModule,
-    SortTableComponent
+    SortTableComponent,
+    RegisteredUsersComponent
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

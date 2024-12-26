@@ -1,0 +1,254 @@
+/* user-card.component.scss */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background: #f8fafc;
+}
+
+.user-card {
+  position: relative;
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--card-gradient);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+    .delete-button {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  background: var(--card-gradient);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+.user-intro {
+  h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: #64748b;
+
+    i {
+      color: #0ea5e9;
+    }
+  }
+}
+
+.delete-button {
+  background: #fee2e2;
+  color: #ef4444;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #fecaca;
+    transform: translateY(0) scale(1.1);
+  }
+
+  i {
+    font-size: 1.1rem;
+  }
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  color: #334155;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+
+  i {
+    font-size: 1.1rem;
+    background: var(--card-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &:hover {
+    transform: translateX(5px);
+  }
+}
+
+.info-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-tile {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #f1f5f9;
+    transform: scale(1.02);
+  }
+
+  .tile-icon {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    i {
+      font-size: 1.1rem;
+      background: var(--card-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .tile-content {
+    flex: 1;
+
+    .tile-label {
+      display: block;
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-bottom: 0.25rem;
+    }
+
+    .tile-value {
+      color: #1e293b;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.address-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+
+  i {
+    font-size: 1.1rem;
+    background: var(--card-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    margin: 0;
+    color: #334155;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 640px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .delete-button {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .info-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+.empty-message {
+  text-align: center;
+  color: gray;
+  font-style: italic;
+}
+.loading-message {
+  text-align: center;
+  color: blue;
+  font-weight: bold;
+}

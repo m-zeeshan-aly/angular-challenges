@@ -1,4 +1,8 @@
-<div *ngIf="showSuccessAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+<div
+  *ngIf="showSuccessAlert"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
   <strong>Success!</strong> Your application has been submitted successfully.
 </div>
 
@@ -8,8 +12,11 @@
       <h2 class="mb-0">Job Application Form</h2>
     </div>
     <div class="card-body">
-      <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" class="needs-validation">
-
+      <form
+        [formGroup]="jobForm"
+        (ngSubmit)="onSubmit()"
+        class="needs-validation"
+      >
         <!-- Personal Information Section -->
         <div class="section-container" formGroupName="personalInfo">
           <h3 class="section-title">Personal Information</h3>
@@ -20,10 +27,19 @@
                 type="text"
                 class="form-control"
                 formControlName="firstName"
-                [ngClass]="{'is-invalid': jobForm.get('personalInfo.firstName')?.touched && jobForm.get('personalInfo.firstName')?.invalid}"
-              >
+                [ngClass]="{
+                  'is-invalid':
+                    jobForm.get('personalInfo.firstName')?.touched &&
+                    jobForm.get('personalInfo.firstName')?.invalid
+                }"
+              />
               <div class="invalid-feedback">
-                {{ getErrorMessage(jobForm.get('personalInfo.firstName'), 'First Name') }}
+                {{
+                  getErrorMessage(
+                    jobForm.get("personalInfo.firstName"),
+                    "First Name"
+                  )
+                }}
               </div>
             </div>
 
@@ -33,10 +49,19 @@
                 type="text"
                 class="form-control"
                 formControlName="lastName"
-                [ngClass]="{'is-invalid': jobForm.get('personalInfo.lastName')?.touched && jobForm.get('personalInfo.lastName')?.invalid}"
-              >
+                [ngClass]="{
+                  'is-invalid':
+                    jobForm.get('personalInfo.lastName')?.touched &&
+                    jobForm.get('personalInfo.lastName')?.invalid
+                }"
+              />
               <div class="invalid-feedback">
-                {{ getErrorMessage(jobForm.get('personalInfo.lastName'), 'Last Name') }}
+                {{
+                  getErrorMessage(
+                    jobForm.get("personalInfo.lastName"),
+                    "Last Name"
+                  )
+                }}
               </div>
             </div>
 
@@ -46,10 +71,16 @@
                 type="email"
                 class="form-control"
                 formControlName="email"
-                [ngClass]="{'is-invalid': jobForm.get('personalInfo.email')?.touched && jobForm.get('personalInfo.email')?.invalid}"
-              >
+                [ngClass]="{
+                  'is-invalid':
+                    jobForm.get('personalInfo.email')?.touched &&
+                    jobForm.get('personalInfo.email')?.invalid
+                }"
+              />
               <div class="invalid-feedback">
-                {{ getErrorMessage(jobForm.get('personalInfo.email'), 'Email') }}
+                {{
+                  getErrorMessage(jobForm.get("personalInfo.email"), "Email")
+                }}
               </div>
             </div>
 
@@ -59,10 +90,16 @@
                 type="tel"
                 class="form-control"
                 formControlName="phone"
-                [ngClass]="{'is-invalid': jobForm.get('personalInfo.phone')?.touched && jobForm.get('personalInfo.phone')?.invalid}"
-              >
+                [ngClass]="{
+                  'is-invalid':
+                    jobForm.get('personalInfo.phone')?.touched &&
+                    jobForm.get('personalInfo.phone')?.invalid
+                }"
+              />
               <div class="invalid-feedback">
-                {{ getErrorMessage(jobForm.get('personalInfo.phone'), 'Phone') }}
+                {{
+                  getErrorMessage(jobForm.get("personalInfo.phone"), "Phone")
+                }}
               </div>
             </div>
 
@@ -72,10 +109,14 @@
                 type="text"
                 class="form-control"
                 formControlName="city"
-                [ngClass]="{'is-invalid': jobForm.get('personalInfo.city')?.touched && jobForm.get('personalInfo.city')?.invalid}"
-              >
+                [ngClass]="{
+                  'is-invalid':
+                    jobForm.get('personalInfo.city')?.touched &&
+                    jobForm.get('personalInfo.city')?.invalid
+                }"
+              />
               <div class="invalid-feedback">
-                {{ getErrorMessage(jobForm.get('personalInfo.city'), 'City') }}
+                {{ getErrorMessage(jobForm.get("personalInfo.city"), "City") }}
               </div>
             </div>
           </div>
@@ -83,29 +124,48 @@
 
         <!-- Education Section -->
         <div class="section-container">
-          <h3 class="section-title">Education
-            <button type="button" class="btn btn-outline-primary btn-sm ms-2" (click)="addEducation()">
+          <h3 class="section-title">
+            Education
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-sm ms-2"
+              (click)="addEducation()"
+            >
               Add Education
             </button>
           </h3>
 
           <div formArrayName="educationArray">
-            <div *ngFor="let education of educationArray.controls; let i=index" [formGroupName]="i" class="education-item">
+            <div
+              *ngFor="let education of educationArray.controls; let i = index"
+              [formGroupName]="i"
+              class="education-item"
+            >
               <div class="row">
+                required
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Education Level</label>
                   <select
                     class="form-select"
                     formControlName="level"
-                    [ngClass]="{'is-invalid': education.get('level')?.touched && education.get('level')?.invalid}"
+                    [ngClass]="{
+                      'is-invalid':
+                        education.get('level')?.touched &&
+                        education.get('level')?.invalid
+                    }"
                   >
                     <option value="">Select Level</option>
-                    <option *ngFor="let level of educationLevels" [value]="level">
-                      {{level}}
+                    <option
+                      *ngFor="let level of educationLevels"
+                      [value]="level"
+                    >
+                      {{ level }}
                     </option>
                   </select>
                   <div class="invalid-feedback">
-                    {{ getErrorMessage(education.get('level'), 'Education Level') }}
+                    {{
+                      getErrorMessage(education.get("level"), "Education Level")
+                    }}
                   </div>
                 </div>
 
@@ -115,10 +175,19 @@
                     type="text"
                     class="form-control"
                     formControlName="instituteName"
-                    [ngClass]="{'is-invalid': education.get('instituteName')?.touched && education.get('instituteName')?.invalid}"
-                  >
+                    [ngClass]="{
+                      'is-invalid':
+                        education.get('instituteName')?.touched &&
+                        education.get('instituteName')?.invalid
+                    }"
+                  />
                   <div class="invalid-feedback">
-                    {{ getErrorMessage(education.get('instituteName'), 'Institute Name') }}
+                    {{
+                      getErrorMessage(
+                        education.get("instituteName"),
+                        "Institute Name"
+                      )
+                    }}
                   </div>
                 </div>
 
@@ -128,10 +197,19 @@
                     type="text"
                     class="form-control"
                     formControlName="degreeName"
-                    [ngClass]="{'is-invalid': education.get('degreeName')?.touched && education.get('degreeName')?.invalid}"
-                  >
+                    [ngClass]="{
+                      'is-invalid':
+                        education.get('degreeName')?.touched &&
+                        education.get('degreeName')?.invalid
+                    }"
+                  />
                   <div class="invalid-feedback">
-                    {{ getErrorMessage(education.get('degreeName'), 'Degree Name') }}
+                    {{
+                      getErrorMessage(
+                        education.get("degreeName"),
+                        "Degree Name"
+                      )
+                    }}
                   </div>
                 </div>
 
@@ -141,21 +219,25 @@
                     type="number"
                     class="form-control"
                     formControlName="grade"
-                    [ngClass]="{'is-invalid': education.get('grade')?.touched && education.get('grade')?.invalid}"
-                  >
+                    [ngClass]="{
+                      'is-invalid':
+                        education.get('grade')?.touched &&
+                        education.get('grade')?.invalid
+                    }"
+                  />
                   <div class="invalid-feedback">
-                    {{ getErrorMessage(education.get('grade'), 'Grade') }}
+                    {{ getErrorMessage(education.get("grade"), "Grade") }}
                   </div>
                 </div>
 
                 <div class="text-end mt-3">
                   <button
                     type="button"
-                    class="btn btn-danger btn-sm "
+                    class="btn btn-danger btn-sm"
                     (click)="removeEducation(i)"
                     *ngIf="educationArray.length > 1"
                   >
-                      Remove
+                    Remove
                   </button>
                 </div>
               </div>
@@ -163,104 +245,141 @@
           </div>
         </div>
 
+        <!-- Skills Section -->
+        <div class="section-container">
+          <h3 class="section-title">
+            Skills
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-sm ms-2"
+              (click)="addSkill()"
+            >
+              Add Skill
+            </button>
+          </h3>
 
-<!-- Skills Section -->
-<div class="section-container">
-  <h3 class="section-title">Skills
-    <button type="button" class="btn btn-outline-primary btn-sm ms-2" (click)="addSkill()">
-      Add Skill
-    </button>
-  </h3>
+          <div formArrayName="skills">
+            <div
+              *ngFor="let skill of skills.controls; let i = index"
+              [formGroupName]="i"
+              class="mb-4"
+            >
+              <div class="row">
+                <!-- Skill Name -->
+                <div class="col-md-6">
+                  <label for="skill-name-{{ i }}" class="form-label"
+                    >Skill Name</label
+                  >
+                  <input
+                    id="skill-name-{{ i }}"
+                    type="text"
+                    class="form-control"
+                    formControlName="name"
+                    [ngClass]="{
+                      'is-invalid':
+                        skill.get('name')?.touched && skill.get('name')?.invalid
+                    }"
+                    placeholder="Enter skill name"
+                  />
+                  <div class="invalid-feedback">
+                    {{ getErrorMessage(skill.get("name"), "Skill Name") }}
+                  </div>
+                </div>
 
-  <div formArrayName="skills">
-    <div *ngFor="let skill of skills.controls; let i = index" [formGroupName]="i" class="mb-4">
-      <div class="row">
-        <!-- Skill Name -->
-        <div class="col-md-6">
-          <label for="skill-name-{{ i }}" class="form-label">Skill Name</label>
-          <input
-            id="skill-name-{{ i }}"
-            type="text"
-            class="form-control"
-            formControlName="name"
-            [ngClass]="{ 'is-invalid': skill.get('name')?.touched && skill.get('name')?.invalid }"
-            placeholder="Enter skill name"
-          >
-          <div class="invalid-feedback">
-            {{ getErrorMessage(skill.get('name'), 'Skill Name') }}
+                <!-- Skill Type -->
+                <div class="col-md-6">
+                  <label for="skill-type-{{ i }}" class="form-label"
+                    >Skill Type</label
+                  >
+                  <select
+                    id="skill-type-{{ i }}"
+                    class="form-select"
+                    formControlName="type"
+                    [ngClass]="{
+                      'is-invalid':
+                        skill.get('type')?.touched && skill.get('type')?.invalid
+                    }"
+                  >
+                    <option value="">Select Type</option>
+                    <option *ngFor="let type of skillTypes" [value]="type">
+                      {{ type }}
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    {{ getErrorMessage(skill.get("type"), "Skill Type") }}
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <!-- Proficiency Level -->
+                <div class="col-md-6">
+                  <label for="skill-proficiency-{{ i }}" class="form-label"
+                    >Proficiency Level</label
+                  >
+                  <select
+                    id="skill-proficiency-{{ i }}"
+                    class="form-select"
+                    formControlName="proficiency"
+                    [ngClass]="{
+                      'is-invalid':
+                        skill.get('proficiency')?.touched &&
+                        skill.get('proficiency')?.invalid
+                    }"
+                  >
+                    <option value="">Proficiency Level</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    {{
+                      getErrorMessage(skill.get("proficiency"), "Proficiency")
+                    }}
+                  </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="col-md-6">
+                  <label for="skill-experience-{{ i }}" class="form-label"
+                    >Years of Experience</label
+                  >
+                  <input
+                    id="skill-experience-{{ i }}"
+                    type="number"
+                    class="form-control"
+                    formControlName="experience"
+                    [ngClass]="{
+                      'is-invalid':
+                        skill.get('experience')?.touched &&
+                        skill.get('experience')?.invalid
+                    }"
+                    placeholder="Enter experience in years"
+                  />
+                  <div class="invalid-feedback">
+                    {{
+                      getErrorMessage(
+                        skill.get("experience"),
+                        "Years of Experience"
+                      )
+                    }}
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-end mt-3">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-sm"
+                  (click)="removeSkill(i)"
+                  *ngIf="skills.length > 1"
+                >
+                  Remove Skill
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-
-        <!-- Skill Type -->
-        <div class="col-md-6">
-          <label for="skill-type-{{ i }}" class="form-label">Skill Type</label>
-          <select
-            id="skill-type-{{ i }}"
-            class="form-select"
-            formControlName="type"
-            [ngClass]="{ 'is-invalid': skill.get('type')?.touched && skill.get('type')?.invalid }"
-          >
-            <option value="">Select Type</option>
-            <option *ngFor="let type of skillTypes" [value]="type">{{ type }}</option>
-          </select>
-          <div class="invalid-feedback">
-            {{ getErrorMessage(skill.get('type'), 'Skill Type') }}
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-3">
-        <!-- Proficiency Level -->
-        <div class="col-md-6">
-          <label for="skill-proficiency-{{ i }}" class="form-label">Proficiency Level</label>
-          <select
-            id="skill-proficiency-{{ i }}"
-            class="form-select"
-            formControlName="proficiency"
-            [ngClass]="{ 'is-invalid': skill.get('proficiency')?.touched && skill.get('proficiency')?.invalid }"
-          >
-            <option value="">Proficiency Level</option>
-            <option value="Beginner">Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Advanced">Advanced</option>
-          </select>
-          <div class="invalid-feedback">
-            {{ getErrorMessage(skill.get('proficiency'), 'Proficiency') }}
-          </div>
-        </div>
-
-        <!-- Experience -->
-        <div class="col-md-6">
-          <label for="skill-experience-{{ i }}" class="form-label">Years of Experience</label>
-          <input
-            id="skill-experience-{{ i }}"
-            type="number"
-            class="form-control"
-            formControlName="experience"
-            [ngClass]="{ 'is-invalid': skill.get('experience')?.touched && skill.get('experience')?.invalid }"
-            placeholder="Enter experience in years"
-          >
-          <div class="invalid-feedback">
-            {{ getErrorMessage(skill.get('experience'), 'Years of Experience') }}
-          </div>
-        </div>
-      </div>
-
-      <div class="text-end mt-3">
-        <button
-          type="button"
-          class="btn btn-danger btn-sm"
-          (click)="removeSkill(i)"
-          *ngIf="skills.length > 1"
-        >
-          Remove Skill
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
         <!-- Experience and Join Time -->
         <div class="section-container">
@@ -271,10 +390,14 @@
                 type="number"
                 class="form-control"
                 formControlName="experience"
-                [ngClass]="{'is-invalid': jobForm.get('experience')?.touched && jobForm.get('experience')?.invalid}"
-              >
+                [ngClass]="{
+                  'is-invalid':
+                    jobForm.get('experience')?.touched &&
+                    jobForm.get('experience')?.invalid
+                }"
+              />
               <div class="invalid-feedback">
-                {{ getErrorMessage(jobForm.get('experience'), 'Experience') }}
+                {{ getErrorMessage(jobForm.get("experience"), "Experience") }}
               </div>
             </div>
 
@@ -284,10 +407,14 @@
                 type="number"
                 class="form-control"
                 formControlName="joinTime"
-                [ngClass]="{'is-invalid': jobForm.get('joinTime')?.touched && jobForm.get('joinTime')?.invalid}"
-              >
+                [ngClass]="{
+                  'is-invalid':
+                    jobForm.get('joinTime')?.touched &&
+                    jobForm.get('joinTime')?.invalid
+                }"
+              />
               <div class="invalid-feedback">
-                {{ getErrorMessage(jobForm.get('joinTime'), 'Join Time') }}
+                {{ getErrorMessage(jobForm.get("joinTime"), "Join Time") }}
               </div>
             </div>
           </div>
@@ -300,14 +427,16 @@
             class="form-check-input"
             id="acceptTerms"
             formControlName="acceptTerms"
-            [ngClass]="{'is-invalid': jobForm.get('acceptTerms')?.touched && jobForm.get('acceptTerms')?.invalid}"
-          >
+            [ngClass]="{
+              'is-invalid':
+                jobForm.get('acceptTerms')?.touched &&
+                jobForm.get('acceptTerms')?.invalid
+            }"
+          />
           <label class="form-check-label" for="acceptTerms">
             I confirm that all the information provided is correct
           </label>
-          <div class="invalid-feedback">
-            You must agree before submitting
-          </div>
+          <div class="invalid-feedback">You must agree before submitting</div>
         </div>
 
         <!-- Submit Button -->
