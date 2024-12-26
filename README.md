@@ -1,27 +1,38 @@
-# AngularChallenges
+# Angular Challenges
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+Welcome to the **Angular Challenges** repository! This is a collection of Angular challenges and solutions that help in learning and applying Angular concepts. It also includes the necessary backend to support the application.
 
-## Development server
+## Frontend Repository
+This is the frontend repository for the Angular challenges app:
+- [Frontend Repository](https://github.com/m-zeeshan-aly/angular-challenges)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Backend Repository
+The backend for this Angular app is built using **Express.js**. It serves as the API to interact with the frontend:
+- [Backend Repository](https://github.com/m-zeeshan-aly/Angular-Challenges-Backend-Expess)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Various Angular Challenges** to solve real-world problems
+- **Backend Integration** with Express.js API
+- **Reactive Forms** used for managing forms
+- **HttpClient** for communication between frontend and backend
+- **Modular Structure** for clean and maintainable code
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To run the Angular app locally and see the challenges in action, follow these steps:
 
-## Running unit tests
+### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ensure you have the following installed:
 
-## Running end-to-end tests
+- **Node.js** (for both backend and frontend)
+- **Angular CLI** (to run the Angular app)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 1. Clone the repositories
 
-## Further help
+Clone both the frontend and backend repositories:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+git clone https://github.com/m-zeeshan-aly/angular-challenges.git
+git clone https://github.com/m-zeeshan-aly/Angular-Challenges-Backend-Expess.git
